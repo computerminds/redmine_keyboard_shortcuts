@@ -1,3 +1,8 @@
+<%
+if User.current.logged?
+  e = User.current.pref.keyboard_shortcuts
+  if e == true
+ %>
 <%= stylesheet_link_tag("keyboard_shortcuts", :plugin => "redmine_keyboard_shortcuts", :media => "screen") %>
 <%= javascript_include_tag('jquery.cookie.js', :plugin => 'redmine_keyboard_shortcuts') %>
 <%= javascript_include_tag('keyboard_shortcuts', :plugin => 'redmine_keyboard_shortcuts') %>
@@ -7,3 +12,5 @@
     var ks_issue_id = <%= @issue.id %>;
   <% end %>
 </script>
+<% end %>
+<% end %>
